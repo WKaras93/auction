@@ -1,0 +1,12 @@
+<div class="thumbnail">
+  <img src="https://via.placeholder.com/280x150">
+
+  <div class="caption">
+    <h4 class="float-right">{{product.price | currency}}</h4>
+    <h4><a [routerLink]="['/products', product.id]">{{product.title}}</a></h4>
+  </div>
+
+  <div class="ratings">
+    <app-stars [rating]="product.rating"></app-stars>
+  </div>
+</div>
