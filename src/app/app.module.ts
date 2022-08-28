@@ -12,6 +12,13 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { SearchComponent } from './search/search.component';
 import { StarsComponent } from './stars/stars.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { ProductBoughtComponent } from './product-bought/product-bought.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginGuard } from './shared/login.guard';
+import { LoginService } from './shared/login.service';
+import { UnsavedChangesGuard } from './shared/unsave-changes.guard';
 
 @NgModule({
   declarations: [
@@ -23,13 +30,17 @@ import { StarsComponent } from './stars/stars.component';
     ProductItemComponent,
     ProductDetailComponent,
     SearchComponent,
-    StarsComponent
+    StarsComponent,
+    RegisterComponent,
+    LoginComponent,
+    ProductBoughtComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, LoginGuard, LoginService, UnsavedChangesGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

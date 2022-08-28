@@ -10,4 +10,6 @@
   <div class="ratings">
     <app-stars [rating]="product.rating"></app-stars>
   </div>
+
+  <button [routerLink]="['/products/buy', product.id]" class="btn btn-primary btn-lg">Kup teraz</button>
 </div>
